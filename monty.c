@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 		/*printf("%s", line);*/
 		opcode = strtok(line, " ");
 		data = strtok(NULL, " ");
-		if (opcode != NULL)
+		if (opcode != NULL || (strcmp(opcode, "nop") == 0))
 		{
 			if (get_instruction(opcode, data, &stack, ln) != 0)
 			{
