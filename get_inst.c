@@ -16,6 +16,12 @@ int get_instruction(char *inst, char *data, stack_t **stack, unsigned int ln)
 		{"pint", pint},
 		{"swap", swap},
 		{"add", add},
+		{"sub", sub},
+		{"mul", mul},
+		{"div", divo},
+		{"mod", mod},
+		{"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 	for (i = 0; op[i].opcode; i++)

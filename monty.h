@@ -51,6 +51,13 @@ void pall(stack_t **stack, unsigned int ln, char *inst, char *data);
 void pint(stack_t **stack, unsigned int ln, char *inst, char *data);
 void swap(stack_t **stack, unsigned int ln, char *inst, char *data);
 void add(stack_t **stack, unsigned int ln, char *inst, char *data);
+void sub(stack_t **stack, unsigned int ln, char *inst, char *data);
+void mul(stack_t **stack, unsigned int ln, char *inst, char *data);
+void divo(stack_t **stack, unsigned int ln, char *inst, char *data);
+void mod(stack_t **stack, unsigned int ln, char *inst, char *data);
+void pchar(stack_t **stack, unsigned int ln, char *inst, char *data);
+void pstr(stack_t **stack, unsigned int ln, char *inst, char *data);
+
 int s_len(stack_t *stack);
 int satoi(char *data, char *inst, unsigned int ln);
 void serror(char *inst, unsigned int ln);

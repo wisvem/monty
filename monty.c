@@ -35,12 +35,16 @@ int main(int argc, char **argv)
 		/*printf("%s", line);*/
 		opcode = strtok(line, " ");
 		data = strtok(NULL, " ");
-		if (opcode != NULL || (strcmp(opcode, "nop") == 0))
+
+		if (opcode != NULL)
 		{
-			if (get_instruction(opcode, data, &stack, ln) != 0)
+			if (strcmp(opcode, "nop") != 0 || opcode[0] != '#')
 			{
-				printf("L%u: unknown instruction %s\n", ln, opcode);
-				exit(EXIT_FAILURE);
+				if (get_instruction(opcode, data, &stack, ln) != 0)
+				{
+					printf("L%u: unknown instruction %s\n", ln, opcode);
+					exit(EXIT_FAILURE);
+				}
 			}
 		}
 	}
