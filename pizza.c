@@ -28,7 +28,7 @@ void free_pizza(void)
 /**
 * free_stack - frees a list
 **/
-void free_stack()
+void free_stack(void)
 {
 	stack_t *head = m.stack;
 	stack_t *temp;

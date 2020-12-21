@@ -33,8 +33,6 @@ void pop(stack_t **stack, unsigned int ln)
 
 /**
 * pop2 - cut the tail of the stack
-* @stack: the stack
-* @ln: line number
 **/
 void pop2(void)
 {

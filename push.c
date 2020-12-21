@@ -37,8 +37,7 @@ void push(stack_t **stack, unsigned int ln)
 
 /**
 * push2 - push data end
-* @stack: the stack
-* @ln: line number
+* @num: data to be added
 **/
 void push2(int num)
 {
@@ -71,9 +70,8 @@ void push2(int num)
 }
 
 /**
-* push3 - push data end
-* @stack: the stack
-* @ln: line number
+* push3 - push data head
+* @num: data to be added
 **/
 void push3(int num)
 {

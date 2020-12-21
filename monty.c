@@ -42,5 +42,5 @@ int main(int argc, char **argv)
 		}
 	}
 	free_pizza();
-	return(EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 }

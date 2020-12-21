@@ -84,6 +84,6 @@ void bring_pizza(void);
 void free_pizza(void);
 int s_len(stack_t *head);
 int satoi(char *data);
-void free_stack();
+void free_stack(void);
 void serror(void);
 #endif

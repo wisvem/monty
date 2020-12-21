@@ -40,7 +40,7 @@ void rotr(stack_t **stack, unsigned int ln)
 	(void)ln;
 	if (head == NULL || s_len(head) == 1)
 		return;
-	
+
 	while ((*tail).next != NULL)
 	{
 		tail = (*tail).next;
