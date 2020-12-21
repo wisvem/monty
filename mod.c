@@ -17,7 +17,7 @@ void mod(stack_t **stack, unsigned int ln)
 		temp = (*h).n;
 		if (temp == 0)
 		{
-			fprintf(stderr, "L%u: division by zerot\n", ln);
+			fprintf(stderr, "L%u: division by zero\n", ln);
 			free_pizza(1);
 		}
 		else
