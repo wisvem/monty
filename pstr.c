@@ -19,7 +19,7 @@ void pstr(stack_t **stack, unsigned int ln)
 	}
 	while (h != NULL)
 	{
-		if ((*h).n < 1 || (*h).n > 255)
+		if ((*h).n < 0 || (*h).n > 127)
 		{
 			putchar('\n');
 			return;

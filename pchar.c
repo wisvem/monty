@@ -14,7 +14,7 @@ void pchar(stack_t **stack, unsigned int ln)
 	(void)ln;
 
 
-	if (!stack)
+	if (!h)
 	{
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", ln);
 		free_pizza(1);
