@@ -14,13 +14,13 @@ int main(int argc, char **argv)
 	bring_pizza();
 	if (argc != 2)
 	{
-		printf("USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	m.fp = fopen(argv[1], "r");
 	if (m.fp == NULL)
 	{
-		printf("Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while ((x = getline(&m.line, &len, m.fp)) != -1)
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 			{
 				if (get_instruction() != 0)
 				{
-					printf("L%u: unknown instruction %s\n", m.ln, m.inst);
+					fprintf(stderr, "L%u: unknown instruction %s\n", m.ln, m.inst);
 					free_pizza(1);
 				}
 			}
