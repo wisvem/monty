@@ -11,6 +11,7 @@ void bring_pizza(void)
 	m.stack = NULL;
 	m.inst = NULL;
 	m.data = NULL;
+	m.mode = 0;
 }
 
 /**

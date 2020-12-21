@@ -1,6 +1,23 @@
 #include "monty.h"
 
 /**
+* spush - push selector
+* @stack: the stack
+* @ln: line number
+**/
+void spush(stack_t **stack, unsigned int ln)
+{
+	if (m.mode == 0)
+	{
+		push(stack, ln);
+	}
+	else
+	{
+		push2(satoi(m.data));
+	}
+}
+
+/**
 * push - push data
 * @stack: the stack
 * @ln: line number

@@ -9,7 +9,7 @@ int get_instruction(void)
 	int i;
 	void (*f)();
 	instruction_t op[] = {
-		{"push", push},
+		{"push", spush},
 		{"pall", pall},
 		{"pop", pop},
 		{"pint", pint},
@@ -24,6 +24,7 @@ int get_instruction(void)
 		{"rotl", rotl},
 		{"rotr", rotr},
 		{"queue", queue},
+		{"stack", stack},
 		{NULL, NULL}
 	};
 	for (i = 0; op[i].opcode; i++)

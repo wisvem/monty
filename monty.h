@@ -45,6 +45,7 @@ typedef struct instruction_s
  * @data: data
  * @fp: file to be opened
  * @line: line to be read
+ * @mode: mode selector (stack or queue)
  */
 typedef struct pizza_s
 {
@@ -53,6 +54,7 @@ typedef struct pizza_s
 	unsigned int ln;
 	stack_t *stack;
 	char *inst, *data;
+	int mode;
 } pizza_t;
 
 extern pizza_t m;
@@ -61,6 +63,7 @@ pizza_t m;
 int get_instruction(void);
 
 void push(stack_t **stack, unsigned int ln);
+void spush(stack_t **stack, unsigned int ln);
 void push2(int num);
 void push3(int num);
 void pop(stack_t **stack, unsigned int ln);
