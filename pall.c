@@ -13,7 +13,9 @@ void pall(stack_t **stack, unsigned int ln)
 	(void)stack;
 	(void)number;
 	(void)ln;
-
+	
+	if (!stack)
+		return;
 	while (h != NULL)
 	{
 		printf("%i\n", (*h).n);
