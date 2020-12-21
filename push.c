@@ -137,7 +137,7 @@ void pushq(stack_t **stack, unsigned int ln)
 	newnode = malloc(sizeof(stack_t));
 	if (newnode == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed");
+		fprintf(stderr, "Error: maalloc failed");
 		free_pizza(1);
 	}
 
