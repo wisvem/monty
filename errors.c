@@ -5,6 +5,6 @@
 **/
 void serror(void)
 {
-	printf("L%u: usage: %s integer\n", m.ln, m.inst);
+	fprintf(stderr, "L%u: usage: %s integer\n", m.ln, m.inst);
 	free_pizza();
 }
