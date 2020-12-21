@@ -16,6 +16,7 @@ void bring_pizza(void)
 
 /**
  * free_pizza - frees the struct
+ * @status: 0 success 1 error
  */
 void free_pizza(int status)
 {
