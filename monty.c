@@ -36,11 +36,11 @@ int main(int argc, char **argv)
 				if (get_instruction() != 0)
 				{
 					printf("L%u: unknown instruction %s\n", m.ln, m.inst);
-					free_pizza();
+					free_pizza(1);
 				}
 			}
 		}
 	}
-	free_pizza();
+	free_pizza(0);
 	return (EXIT_SUCCESS);
 }

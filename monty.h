@@ -84,7 +84,7 @@ void queue(stack_t **stack, unsigned int ln);
 void stack(stack_t **stack, unsigned int ln);
 
 void bring_pizza(void);
-void free_pizza(void);
+void free_pizza(int status);
 int s_len(stack_t *head);
 int satoi(char *data);
 void free_stack(void);

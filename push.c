@@ -39,7 +39,7 @@ void push(stack_t **stack, unsigned int ln)
 	if (newnode == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
-		free_pizza();
+		free_pizza(1);
 	}
 
 	(*newnode).n = n;
@@ -66,7 +66,7 @@ void push2(int num)
 	if (newnode == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
-		free_pizza();
+		free_pizza(1);
 	}
 	(*newnode).n = num;
 	(*newnode).next = NULL;
@@ -98,7 +98,7 @@ void push3(int num)
 	if (newnode == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
-		free_pizza();
+		free_pizza(1);
 	}
 
 	(*newnode).n = num;

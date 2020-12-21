@@ -18,7 +18,7 @@ void mod(stack_t **stack, unsigned int ln)
 		if (temp == 0)
 		{
 			fprintf(stderr, "L%u: division by zerot\n", ln);
-			free_pizza();
+			free_pizza(1);
 		}
 		else
 		{
@@ -29,6 +29,6 @@ void mod(stack_t **stack, unsigned int ln)
 	else
 	{
 		fprintf(stderr, "L%u: can't mod, stack too short\n", ln);
-		free_pizza();
+		free_pizza(1);
 	}
 }

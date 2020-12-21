@@ -27,7 +27,7 @@ void pop(stack_t **stack, unsigned int ln)
 	else
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", ln);
-		exit(EXIT_FAILURE);
+		free_pizza(1);
 	}
 }
 

@@ -17,13 +17,15 @@ void bring_pizza(void)
 /**
  * free_pizza - frees the struct
  */
-void free_pizza(void)
+void free_pizza(int status)
 {
 	fclose(m.fp);
 	if (m.line)
 		free(m.line);
 	free_stack();
-	exit(EXIT_SUCCESS);
+	if (status == 0)
+		exit(EXIT_SUCCESS);
+	exit(EXIT_FAILURE);
 }
 
 /**

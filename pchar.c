@@ -17,12 +17,12 @@ void pchar(stack_t **stack, unsigned int ln)
 	if (!stack)
 	{
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", ln);
-		free_pizza();
+		free_pizza(1);
 	}
 	if ((*h).n < 0 || (*h).n > 127)
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", ln);
-		free_pizza();
+		free_pizza(1);
 	}
 	printf("%c\n", (*h).n);
 }

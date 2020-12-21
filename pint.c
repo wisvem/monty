@@ -16,7 +16,7 @@ void pint(stack_t **stack, unsigned int ln)
 	if (!h)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", ln);
-		exit(EXIT_FAILURE);
+		free_pizza(1);
 	}
 	printf("%i\n", (*h).n);
 }

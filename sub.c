@@ -21,6 +21,6 @@ void sub(stack_t **stack, unsigned int ln)
 	else
 	{
 		fprintf(stderr, "L%u: can't sub, stack too short\n", ln);
-		free_pizza();
+		free_pizza(1);
 	}
 }

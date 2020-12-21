@@ -21,6 +21,6 @@ void mul(stack_t **stack, unsigned int ln)
 	else
 	{
 		fprintf(stderr, "L%u: can't mul, stack too short\n", ln);
-		free_pizza();
+		free_pizza(1);
 	}
 }
