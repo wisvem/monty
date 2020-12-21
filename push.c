@@ -65,7 +65,7 @@ void push2(int num)
 	newnode = malloc(sizeof(stack_t));
 	if (newnode == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed");
+		fprintf(stderr, "Error: malloc f failed");
 		free_pizza(1);
 	}
 	(*newnode).n = num;
