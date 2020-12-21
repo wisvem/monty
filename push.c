@@ -111,7 +111,7 @@ void push3(int num)
 	m.stack = newnode;
 }
 /**
-* push - push data
+* pushq - push data
 * @stack: the stack
 * @ln: line number
 **/
@@ -154,7 +154,6 @@ void pushq(stack_t **stack, unsigned int ln)
 		{
 			lastnode = (*lastnode).next;
 		}
-		
 		(*lastnode).next = newnode;
 		(*newnode).prev = lastnode;
 	}
