@@ -31,12 +31,15 @@ int main(int argc, char **argv)
 		m.data = strtok(NULL, " ");
 		if (m.inst != NULL)
 		{
-			if (strcmp(m.inst, "nop") != 0 || m.inst[0] != '#')
+			if (m.inst[0] != '#')
 			{
-				if (get_instruction() != 0)
+				if (strcmp(m.inst, "nop") != 0)
 				{
-					fprintf(stderr, "L%u: unknown instruction %s\n", m.ln, m.inst);
-					free_pizza(1);
+					if (get_instruction() != 0)
+					{
+						fprintf(stderr, "L%u: unknown instruction %s\n", m.ln, m.inst);
+						free_pizza(1);
+					}
 				}
 			}
 		}
