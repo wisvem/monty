@@ -11,9 +11,9 @@ void spush(stack_t **stack, unsigned int ln)
 	{
 		push(stack, ln);
 	}
-	else
+	if (m.mode == 1)
 	{
-		push2(satoi(m.data));
+		pushq(stack, ln);
 	}
 }
 
@@ -109,4 +109,53 @@ void push3(int num)
 		(*m.stack).prev = newnode;
 	}
 	m.stack = newnode;
+}
+/**
+* push - push data
+* @stack: the stack
+* @ln: line number
+**/
+void pushq(stack_t **stack, unsigned int ln)
+{
+	int n;
+	stack_t *newnode = NULL;
+	stack_t *head = *stack;
+	stack_t *lastnode = head;
+	(void)ln;
+	(void)stack;
+
+	if (head == NULL)
+	{
+		push(stack, ln);
+		return;
+	}
+	if (m.data == NULL)
+	{
+		serror();
+	}
+	n = satoi(m.data);
+	newnode = malloc(sizeof(stack_t));
+	if (newnode == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed");
+		free_pizza(1);
+	}
+
+	(*newnode).n = n;
+	(*newnode).next = NULL;
+	if (head == NULL)
+	{
+		(*newnode).prev = NULL;
+		head = newnode;
+	}
+	else
+	{
+		while ((*lastnode).next != NULL)
+		{
+			lastnode = (*lastnode).next;
+		}
+		
+		(*lastnode).next = newnode;
+		(*newnode).prev = lastnode;
+	}
 }

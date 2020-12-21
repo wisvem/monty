@@ -82,6 +82,7 @@ void rotl(stack_t **stack, unsigned int ln);
 void rotr(stack_t **stack, unsigned int ln);
 void queue(stack_t **stack, unsigned int ln);
 void stack(stack_t **stack, unsigned int ln);
+void pushq(stack_t **stack, unsigned int ln);
 
 void bring_pizza(void);
 void free_pizza(int status);
