@@ -1,13 +1,16 @@
 #include "monty.h"
 
-void swap(stack_t **stack, unsigned int ln, char *inst, char *data)
+/**
+* swap - swap top two elements
+* @stack: the stack
+* @ln: line number
+**/
+void swap(stack_t **stack, unsigned int ln)
 {
 	stack_t *h = *stack;
 	int temp;
 	(void)stack;
-	(void)data;
 	(void)ln;
-	(void)inst;
 
 	if ((s_len(h)) >= 2)
 	{

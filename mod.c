@@ -1,13 +1,16 @@
 #include "monty.h"
 
-void mod(stack_t **stack, unsigned int ln, char *inst, char *data)
+/**
+* mod - mod top two elements and pop
+* @stack: the stack
+* @ln: line number
+**/
+void mod(stack_t **stack, unsigned int ln)
 {
 	stack_t *h = *stack;
 	int temp;
 	(void)stack;
-	(void)data;
 	(void)ln;
-	(void)inst;
 
 	if ((s_len(h)) >= 2)
 	{
@@ -15,17 +18,17 @@ void mod(stack_t **stack, unsigned int ln, char *inst, char *data)
 		if (temp == 0)
 		{
 			fprintf(stderr, "L%u: division by zerot\n", ln);
-			exit(EXIT_FAILURE);
+			free_pizza();
 		}
 		else
 		{
 			(*(*h).next).n = (*(*h).next).n % temp;
-			pop(stack, ln, inst, data);
+			pop(stack, ln);
 		}
 	}
 	else
 	{
 		fprintf(stderr, "L%u: can't mod, stack too short\n", ln);
-		exit(EXIT_FAILURE);
+		free_pizza();
 	}
 }

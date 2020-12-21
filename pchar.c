@@ -1,24 +1,28 @@
 #include "monty.h"
 
-void pchar(stack_t **stack, unsigned int ln, char *inst, char *data)
+/**
+* pchar - print ascii
+* @stack: teh stack
+* @ln: line number
+**/
+void pchar(stack_t **stack, unsigned int ln)
 {
 	int number;
 	stack_t *h = *stack;
 	(void)stack;
 	(void)number;
-	(void)data;
 	(void)ln;
-	(void)inst;
+
 
 	if (!stack)
 	{
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", ln);
-		exit(EXIT_FAILURE);
+		free_pizza();
 	}
-	if ((*h).n < 0 || (*h).n > 255)
+	if ((*h).n < 0 || (*h).n > 127)
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", ln);
-		exit(EXIT_FAILURE);
+		free_pizza();
 	}
 	printf("%c\n", (*h).n);
 }

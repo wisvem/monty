@@ -37,28 +37,53 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-typedef struct instruction_x
+/**
+ * struct pizza_s - pizza
+ * @ln: lenght of line
+ * @stack: the stack
+ * @inst: opcode
+ * @data: data
+ * @fp: file to be opened
+ * @line: line to be read
+ */
+typedef struct pizza_s
 {
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int ln, char *inst, char *data);
-} instruction_tx;
+	FILE *fp;
+	char *line;
+	unsigned int ln;
+	stack_t *stack;
+	char *inst, *data;
+} pizza_t;
 
-int get_instruction(char *inst, char *data, stack_t **stack, unsigned int ln);
+extern pizza_t m;
+pizza_t m;
 
-void push(stack_t **stack, unsigned int ln, char *inst, char *data);
-void pop(stack_t **stack, unsigned int ln, char *inst, char *data);
-void pall(stack_t **stack, unsigned int ln, char *inst, char *data);
-void pint(stack_t **stack, unsigned int ln, char *inst, char *data);
-void swap(stack_t **stack, unsigned int ln, char *inst, char *data);
-void add(stack_t **stack, unsigned int ln, char *inst, char *data);
-void sub(stack_t **stack, unsigned int ln, char *inst, char *data);
-void mul(stack_t **stack, unsigned int ln, char *inst, char *data);
-void divo(stack_t **stack, unsigned int ln, char *inst, char *data);
-void mod(stack_t **stack, unsigned int ln, char *inst, char *data);
-void pchar(stack_t **stack, unsigned int ln, char *inst, char *data);
-void pstr(stack_t **stack, unsigned int ln, char *inst, char *data);
+int get_instruction(void);
 
-int s_len(stack_t *stack);
-int satoi(char *data, char *inst, unsigned int ln);
-void serror(char *inst, unsigned int ln);
+void push(stack_t **stack, unsigned int ln);
+void push2(int num);
+void push3(int num);
+void pop(stack_t **stack, unsigned int ln);
+void pop2(void);
+void pall(stack_t **stack, unsigned int ln);
+void pint(stack_t **stack, unsigned int ln);
+void swap(stack_t **stack, unsigned int ln);
+void add(stack_t **stack, unsigned int ln);
+void sub(stack_t **stack, unsigned int ln);
+void mul(stack_t **stack, unsigned int ln);
+void divo(stack_t **stack, unsigned int ln);
+void mod(stack_t **stack, unsigned int ln);
+void pchar(stack_t **stack, unsigned int ln);
+void pstr(stack_t **stack, unsigned int ln);
+void rotl(stack_t **stack, unsigned int ln);
+void rotr(stack_t **stack, unsigned int ln);
+void queue(stack_t **stack, unsigned int ln);
+void stack(stack_t **stack, unsigned int ln);
+
+void bring_pizza(void);
+void free_pizza(void);
+int s_len(stack_t *head);
+int satoi(char *data);
+void free_stack();
+void serror(void);
 #endif

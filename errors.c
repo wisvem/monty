@@ -1,7 +1,10 @@
 #include "monty.h"
 
-void serror(char *inst, unsigned int ln)
+/**
+* serror - print custom errors
+**/
+void serror(void)
 {
-	printf("L%u: usage: %s integer\n", ln, inst);
-	exit(EXIT_FAILURE);
+	printf("L%u: usage: %s integer\n", m.ln, m.inst);
+	free_pizza();
 }

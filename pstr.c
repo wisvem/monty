@@ -1,14 +1,17 @@
 #include "monty.h"
 
-void pstr(stack_t **stack, unsigned int ln, char *inst, char *data)
+/**
+* pstr - print the head
+* @stack: teh stack
+* @ln: line number
+**/
+void pstr(stack_t **stack, unsigned int ln)
 {
 	int number;
 	stack_t *h = *stack;
 	(void)stack;
 	(void)number;
-	(void)data;
 	(void)ln;
-	(void)inst;
 
 	if (!*stack)
 	{

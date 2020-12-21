@@ -1,15 +1,18 @@
 #include "monty.h"
 
-void pall(stack_t **stack, unsigned int ln, char *inst, char *data)
+/**
+* pall - print the stack
+* @stack: the stack
+* @ln: line number
+**/
+void pall(stack_t **stack, unsigned int ln)
 {
 	int number;
 	stack_t *h = *stack;
 	size_t count = 0;
 	(void)stack;
 	(void)number;
-	(void)data;
 	(void)ln;
-	(void)inst;
 
 	while (h != NULL)
 	{

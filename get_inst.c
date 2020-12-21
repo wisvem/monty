@@ -1,15 +1,14 @@
 #include "monty.h"
 
 /**
-* get_print - get the correct function
-* @tipo: format specifier
+* get_instruction - get the correct function
 * Return: pointer to the correct function
 **/
-int get_instruction(char *inst, char *data, stack_t **stack, unsigned int ln)
+int get_instruction(void)
 {
 	int i;
 	void (*f)();
-	instruction_tx op[] = {
+	instruction_t op[] = {
 		{"push", push},
 		{"pall", pall},
 		{"pop", pop},
@@ -22,14 +21,17 @@ int get_instruction(char *inst, char *data, stack_t **stack, unsigned int ln)
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
+		{"rotr", rotr},
+		{"queue", queue},
 		{NULL, NULL}
 	};
 	for (i = 0; op[i].opcode; i++)
 	{
-		if (strcmp(inst, op[i].opcode) == 0)
+		if (strcmp(m.inst, op[i].opcode) == 0)
 		{
 			f = op[i].f;
-			f(stack, ln, inst, data);
+			f(&m.stack, m.ln);
 			return (0);
 		}
 	}

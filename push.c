@@ -1,24 +1,30 @@
 #include "monty.h"
 
-void push(stack_t **stack, unsigned int ln, char *inst, char *data)
+/**
+* push - push data
+* @stack: the stack
+* @ln: line number
+**/
+void push(stack_t **stack, unsigned int ln)
 {
-	int n; 
+	int n;
 	stack_t *newnode = NULL;
-	
+
+	(void)ln;
 	(void)stack;
 
-	if (data == NULL)
+	if (m.data == NULL)
 	{
-		serror(inst, ln);
+		serror();
 	}
-	n = satoi(data, inst, ln);
+	n = satoi(m.data);
 	newnode = malloc(sizeof(stack_t));
 	if (newnode == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
-		exit(EXIT_FAILURE);
+		free_pizza();
 	}
-	
+
 	(*newnode).n = n;
 	(*newnode).prev = NULL;
 	(*newnode).next = *stack;
@@ -27,4 +33,65 @@ void push(stack_t **stack, unsigned int ln, char *inst, char *data)
 		(**stack).prev = newnode;
 	}
 	*stack = newnode;
+}
+
+/**
+* push2 - push data end
+* @stack: the stack
+* @ln: line number
+**/
+void push2(int num)
+{
+	stack_t *head = m.stack;
+	stack_t *newnode = NULL;
+	stack_t *lastnode = head;
+
+	newnode = malloc(sizeof(stack_t));
+	if (newnode == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed");
+		free_pizza();
+	}
+	(*newnode).n = num;
+	(*newnode).next = NULL;
+	if (head == NULL)
+	{
+		(*newnode).prev = NULL;
+		head = newnode;
+	}
+	else
+	{
+		while ((*lastnode).next != NULL)
+		{
+			lastnode = (*lastnode).next;
+		}
+		(*lastnode).next = newnode;
+		(*newnode).prev = lastnode;
+	}
+}
+
+/**
+* push3 - push data end
+* @stack: the stack
+* @ln: line number
+**/
+void push3(int num)
+{
+	stack_t *newnode = NULL;
+
+	newnode = malloc(sizeof(stack_t));
+	if (newnode == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed");
+		free_pizza();
+	}
+
+	(*newnode).n = num;
+	(*newnode).prev = NULL;
+	(*newnode).next = m.stack;
+	if (m.stack != NULL)
+	{
+		(*m.stack).prev = newnode;
+	}
+	m.stack = newnode;
 }

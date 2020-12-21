@@ -1,15 +1,18 @@
 #include "monty.h"
 
-void pop(stack_t **stack, unsigned int ln, char *inst, char *data)
+/**
+* pop - cut the head of the stack
+* @stack: the stack
+* @ln: line number
+**/
+void pop(stack_t **stack, unsigned int ln)
 {
 	stack_t *temp, *temp2;
 	int number;
 
 	(void)stack;
 	(void)number;
-	(void)data;
 	(void)ln;
-	(void)inst;
 
 	temp = *stack;
 	if (temp != NULL)
@@ -26,5 +29,22 @@ void pop(stack_t **stack, unsigned int ln, char *inst, char *data)
 		fprintf(stderr, "L%u: can't pop an empty stack\n", ln);
 		exit(EXIT_FAILURE);
 	}
-	
+}
+
+/**
+* pop2 - cut the tail of the stack
+* @stack: the stack
+* @ln: line number
+**/
+void pop2(void)
+{
+	stack_t *head = m.stack;
+
+	while ((*head).next != NULL)
+	{
+		head = (*head).next;
+	}
+	(*(*head).prev).next = NULL;
+	(*head).prev = NULL;
+	free(head);
 }
