@@ -15,7 +15,7 @@ void sub(stack_t **stack, unsigned int ln)
 	if ((s_len(h)) >= 2)
 	{
 		temp = (*h).n;
-		(*(*h).next).n = temp - (*(*h).next).n;
+		(*(*h).next).n -= temp;
 		pop(stack, ln);
 	}
 	else
