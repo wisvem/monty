@@ -13,19 +13,17 @@ void pstr(stack_t **stack, unsigned int ln)
 	(void)number;
 	(void)ln;
 
-	if (!*stack)
+	if (h != NULL)
 	{
-		return;
-	}
-	while (h != NULL)
-	{
-		if ((*h).n < 1 || (*h).n > 127)
+		while (h != NULL)
 		{
-			putchar('\n');
-			return;
+			if ((*h).n < 1 || (*h).n > 127)
+			{
+				break;
+			}
+			printf("%c", (*h).n);
+			h = (*h).next;
 		}
-		printf("%c", (*h).n);
-		h = (*h).next;
 	}
 	putchar('\n');
 }
